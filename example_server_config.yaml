@@ -1,0 +1,28 @@
+github:
+  tokens:
+    - token: "ghp_your_server_token_here"
+      transport: "gist"
+    - token: "ghp_your_other_server_token_here"
+      transport: "git"
+      repo: "yourname/your-private-tunnel-repo"
+  upstream_connections: 2
+  batch_interval: 1000ms
+  fetch_interval: 1000ms
+  api_timeout: 10s
+
+cleanup:
+  enabled: true
+  interval: 10m
+  dead_connection_ttl: 15m
+
+proxy:
+  target_timeout: 30s
+  buffer_size: 65536
+
+encryption:
+  algorithm: "xor"
+
+logging:
+  level: "info"
+  format: "text"
+  file: "/var/log/gh-tunnel/server.log"

@@ -1,0 +1,36 @@
+run:
+  timeout: 5m
+  go: "1.21"
+
+linters:
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - gofmt
+    - revive
+    - gosec
+    - misspell
+    - bodyclose
+    - contextcheck
+    - noctx
+
+linters-settings:
+  revive:
+    rules:
+      - name: exported
+        severity: warning
+  gosec:
+    excludes:
+      - G401  # Allow weak crypto (XOR documented limitation)
+      - G501  # Allow MD5 for non-security uses
+
+issues:
+  exclude-rules:
+    - path: "_test\\.go"
+      linters:
+        - errcheck
+        - gosec

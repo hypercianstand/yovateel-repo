@@ -1,0 +1,29 @@
+github:
+  tokens:
+    - token: "ghp_your_token_here"
+      transport: "gist"
+    - token: "ghp_your_other_token_here"
+      transport: "git"
+      repo: "yourname/your-private-tunnel-repo"
+  upstream_connections: 2
+  batch_interval: 1000ms
+  fetch_interval: 1000ms
+  api_timeout: 10s
+
+socks:
+  listen_addr: "127.0.0.1:1080"
+  timeout: 30s
+
+encryption:
+  algorithm: "xor"
+
+rate_limit:
+  max_requests_per_hour: 4500
+  burst_limit: 25
+  backoff_multiplier: 2.0
+  low_remaining_warn: 30
+
+logging:
+  level: "info"
+  format: "text"
+  file: ""
