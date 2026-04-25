@@ -54,6 +54,16 @@ PATs from **different accounts** each get their own pool — the only way to mul
 
 ## Quick Start
 
+### server
+```bash
+sudo bash -c "$(curl -Ls https://raw.githubusercontent.com/sartoopjj/vpn-over-github/main/install.sh)"
+```
+
+### client
+download the latest release binary from
+
+## build from source
+
 ### Prerequisites
 - Go 1.21+
 - GitHub PAT with `gist` scope (gist transport) or `repo` scope (git transport)
